@@ -1,0 +1,16 @@
+Description: Fix FTBFS on non amd64/i386 archs
+Author: Tobias Frost <tobi@debian.org>
+
+Index: modsecurity/build/pcre2.m4
+===================================================================
+--- modsecurity.orig/build/pcre2.m4	2023-03-18 10:13:36.650946562 +0100
++++ modsecurity/build/pcre2.m4	2023-04-24 16:54:45.720319494 +0200
+@@ -4,7 +4,7 @@
+ AC_DEFUN([PROG_PCRE2], [
+ 
+ # Possible names for the pcre2 library/package (pkg-config)
+-PCRE2_POSSIBLE_LIB_NAMES="pcre2 pcre2-8 libpcre2-8"
++PCRE2_POSSIBLE_LIB_NAMES="libpcre2 libpcre2-8"
+ 
+ # Possible extensions for the library
+ PCRE2_POSSIBLE_EXTENSIONS="so so0 la sl dll dylib so.0.0.0"
